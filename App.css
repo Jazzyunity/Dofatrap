@@ -18,7 +18,7 @@ body {
 }
 
 .LogoImage {
-  width: 60px; /* Taille du logo */
+  width: 70px; /* Taille du logo */
   height: auto;
 }
 
@@ -75,11 +75,20 @@ body {
   margin: 40px 0;
 }
 
+/* Conteneur de la vidéo */
 .GuideVideo {
-  width: 45%;
-  border: 2px solid #ff7300;
-  border-radius: 8px;
+  width: 45%; /* Vidéo occupe 45% de la largeur */
+  aspect-ratio: 16 / 9; /* Garde les proportions de la vidéo */
+  border: 2px solid #ff7300; /* Bordure orange */
+  border-radius: 8px; /* Coins arrondis */
+  overflow: hidden; /* Cache tout débordement */
 }
+
+.GuideVideo iframe {
+  width: 100%; /* Vidéo occupe toute la largeur */
+  height: 100%; /* Vidéo occupe toute la hauteur */
+}
+
 
 .GuideText {
   width: 45%;
