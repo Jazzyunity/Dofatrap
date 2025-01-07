@@ -9,7 +9,7 @@ function App() {
         {/* Logo */}
         <div className="Logo">
           <img 
-            src="/bouftou_royal.png" 
+            src="/img/icon.png" 
             alt="Logo Dofus Trap" 
             className="LogoImage" 
           />
@@ -36,12 +36,27 @@ function App() {
             <h2 className="StrategyTitle">Strategy Guide</h2>
 
             <div className="GuideSection">
-              <video src="/path-to-video-1.mp4" autoPlay loop muted className="GuideVideo" />
+              {/* Vidéo YouTube intégrée */}
+              <div className="GuideVideo">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/cmN_Mhdwmis?si=SK7AtkLrDeJ1lq_u&amp;controls=0&playlist=cmN_Mhdwmis&autoplay=1&mute=1&loop=1"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              </div>
+
+              {/* Texte explicatif à droite */}
               <div className="GuideText">
                 <h3>Phase 1</h3>
                 <p>Voici les étapes importantes pour réussir cette phase.</p>
               </div>
             </div>
+
 
             <div className="GuideSection">
               <div className="GuideText">
