@@ -1,51 +1,83 @@
+/* General */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Oswald', sans-serif;
   background-color: #0a0a0a;
   color: #fff;
 }
 
-.App {
-  text-align: center;
-}
-
 .Header {
-  position: relative;
-  padding: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between; /* Espace entre logo et menu */
+  align-items: center; /* Alignement vertical */
+  padding: 0 20px; /* Espacement horizontal */
+  margin: 0 auto; /* Centre horizontalement */
+  max-width: 900px; /* Alignement avec la section principale */
+  height: 70px; /* Hauteur fixe pour le header */
+  background-color: transparent; /* Pas de couleur de fond */
 }
 
-.BouftouImage {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 80px;
+.LogoImage {
+  width: 60px; /* Taille du logo */
   height: auto;
 }
 
-.DungeonTitle {
-  font-size: 2.5rem;
-  color: #ffc107;
-  margin: 0;
+/* Navigation */
+.Nav {
+  flex: 1; /* Prend toute la largeur disponible pour centrer */
+  display: flex;
+  justify-content: center; /* Centre le menu */
 }
 
-.Content {
-  margin: 40px auto;
-  max-width: 800px;
+.NavList {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Espace entre les liens */
+  margin: 0;
+  padding: 0;
+}
+
+.NavItem {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: linear-gradient(180deg, #e48800, #ffc057, #ffffff); /* Plus subtil avec jaune et blanc */
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: color 0.3s ease;
+}
+
+.NavItem:hover {
+  color: #e48800; /* Couleur orange doux fixe au survol */
+}
+
+.DungeonTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #e48800, #ffc057, #ffffff); /* Même gradient */
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-top: 20px;
+}
+
+/* Main Content */
+.MainContent {
+  padding: 40px;
+  text-align: center;
 }
 
 .GuideSection {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin: 20px 0;
+  align-items: center;
+  margin: 40px 0;
 }
 
 .GuideVideo {
   width: 45%;
-  border: 2px solid #ffc107;
+  border: 2px solid #ff7300;
   border-radius: 8px;
 }
 
@@ -57,20 +89,62 @@ body {
   border-radius: 8px;
 }
 
-h2 {
-  color: #ffc107;
+/* Section stratégique */
+.StrategySection {
+  background-color: transparent; /* Supprime le fond supplémentaire */
+  padding: 0; /* Supprime les paddings inutiles */
+  margin: 0 auto; /* Centre la section */
+  max-width: 900px; /* Alignement avec le header */
 }
 
-p {
+/* Conteneur centré pour le contenu stratégique */
+.StrategyContainer {
+  max-width: 900px; /* Limite la largeur */
+  margin: 0 auto; /* Centre horizontalement */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05); /* Légère différence de couleur pour le fond */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre pour un effet élégant */
+}
+
+/* Titre de la stratégie */
+.StrategyTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: linear-gradient(180deg, #ff9900, #ffc057);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+/* Section des guides */
+.GuideSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Vidéo */
+.GuideVideo {
+  width: 45%; /* Prend 45% de la largeur */
+  border: 2px solid #ff7300;
+  border-radius: 8px;
+}
+
+/* Texte */
+.GuideText {
+  width: 45%;
+  text-align: left;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7); /* Fond plus foncé pour le contraste */
+  color: #fff;
+  border-radius: 8px;
+}
+
+body, .App {
   margin: 0;
-}
-
-.bouftou-image {
-  position: absolute; /* Permet de placer l'image librement */
-  top: 20%; /* Ajuste vers le haut (décalage vertical) */
-  left: 35%; /* Ajuste vers la gauche (décalage horizontal) */
-  transform: translate(-50%, -50%); /* Centre par rapport au point de référence */
-  width: 200px; /* Ajuste la taille de l'image */
-  height: auto; /* Conserve les proportions */
-  z-index: 10; /* S'assure que l'image est visible au-dessus du contenu */
+  padding: 0;
+  background-color: #0a0a0a; /* Assure un fond uniforme */
 }
