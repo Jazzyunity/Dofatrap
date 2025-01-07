@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+.App {
+  text-align: center;
+}
+
+.Header {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.BouftouImage {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 80px;
+  height: auto;
+}
+
+.DungeonTitle {
+  font-size: 2.5rem;
+  color: #ffc107;
+  margin: 0;
+}
+
+.Content {
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.GuideSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.GuideVideo {
+  width: 45%;
+  border: 2px solid #ffc107;
+  border-radius: 8px;
+}
+
+.GuideText {
+  width: 45%;
+  text-align: left;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+h2 {
+  color: #ffc107;
+}
+
+p {
+  margin: 0;
+}
+
+.bouftou-image {
+  position: absolute; /* Permet de placer l'image librement */
+  top: 20%; /* Ajuste vers le haut (décalage vertical) */
+  left: 35%; /* Ajuste vers la gauche (décalage horizontal) */
+  transform: translate(-50%, -50%); /* Centre par rapport au point de référence */
+  width: 200px; /* Ajuste la taille de l'image */
+  height: auto; /* Conserve les proportions */
+  z-index: 10; /* S'assure que l'image est visible au-dessus du contenu */
+}
