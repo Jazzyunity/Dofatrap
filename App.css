@@ -1,122 +1,175 @@
-/* General */
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Oswald', sans-serif;
-  background-color: #0a0a0a;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #0a0a0a, #121212);
   color: #fff;
+  overflow-x: hidden;
 }
 
+.App {
+  text-align: center;
+}
+
+/* Header */
 .Header {
   display: flex;
-  justify-content: space-between; /* Espace entre logo et menu */
-  align-items: center; /* Alignement vertical */
-  padding: 0 20px; /* Espacement horizontal */
-  margin: 0 auto; /* Centre horizontalement */
-  max-width: 900px; /* Alignement avec la section principale */
-  height: 70px; /* Hauteur fixe pour le header */
-  background-color: transparent; /* Pas de couleur de fond */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 900px;
+  height: 70px;
+  background-color: transparent;
 }
 
 .LogoImage {
-  width: 70px; /* Taille du logo */
+  width: 60px;
   height: auto;
+  transition: transform 0.3s ease;
 }
 
-/* Navigation */
-.Nav {
-  flex: 1; /* Prend toute la largeur disponible pour centrer */
-  display: flex;
-  justify-content: center; /* Centre le menu */
+.LogoImage:hover {
+  transform: scale(1.1) rotate(-5deg);
 }
 
 .NavList {
   list-style: none;
   display: flex;
-  gap: 20px; /* Espace entre les liens */
+  gap: 20px;
   margin: 0;
   padding: 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .NavItem {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
-  background: linear-gradient(180deg, #e48800, #ffc057, #ffffff); /* Plus subtil avec jaune et blanc */
+  background: linear-gradient(90deg, #ff7300, #ffc057);
   -webkit-background-clip: text;
   color: transparent;
-  transition: color 0.3s ease;
+  position: relative;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.NavItem::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff7300, #ffc057);
+  transition: width 0.3s ease;
 }
 
 .NavItem:hover {
-  color: #e48800; /* Couleur orange doux fixe au survol */
+  color: #ffc057;
 }
 
-.DungeonTitle {
-  font-size: 3rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  background: linear-gradient(180deg, #e48800, #ffc057, #ffffff); /* Même gradient */
-  -webkit-background-clip: text;
-  color: transparent;
-  margin-top: 20px;
+.NavItem:hover::after {
+  width: 100%;
 }
 
 /* Main Content */
 .MainContent {
   padding: 40px;
+}
+
+.DungeonTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffc057, #ff7300);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(255, 115, 0, 0.8);
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 115, 0, 0.8), 0 0 20px rgba(255, 115, 0, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 115, 0, 1), 0 0 30px rgba(255, 115, 0, 0.8);
+  }
+}
+
+/* Boss Image Section */
+.BossImageContainer {
+  position: relative;
+  margin: 40px auto;
+  max-width: 1200px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.BossImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.BossImageContainer:hover .BossImage {
+  filter: brightness(1);
+  transform: scale(1.05);
+}
+
+.BossImageOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
   text-align: center;
-}
-
-.GuideSection {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 40px 0;
-}
-
-/* Conteneur de la vidéo */
-.GuideVideo {
-  width: 45%; /* Vidéo occupe 45% de la largeur */
-  aspect-ratio: 16 / 9; /* Garde les proportions de la vidéo */
-  border: 2px solid #ff7300; /* Bordure orange */
-  border-radius: 8px; /* Coins arrondis */
-  overflow: hidden; /* Cache tout débordement */
-}
-
-.GuideVideo iframe {
-  width: 100%; /* Vidéo occupe toute la largeur */
-  height: 100%; /* Vidéo occupe toute la hauteur */
-}
-
-
-.GuideText {
-  width: 45%;
-  text-align: left;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-}
-
-/* Section stratégique */
-.StrategySection {
-  background-color: transparent; /* Supprime le fond supplémentaire */
-  padding: 0; /* Supprime les paddings inutiles */
-  margin: 0 auto; /* Centre la section */
-  max-width: 900px; /* Alignement avec le header */
-}
-
-/* Conteneur centré pour le contenu stratégique */
-.StrategyContainer {
-  max-width: 900px; /* Limite la largeur */
-  margin: 0 auto; /* Centre horizontalement */
+  background: rgba(0, 0, 0, 0.6);
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.05); /* Légère différence de couleur pour le fond */
-  border-radius: 10px; /* Coins arrondis */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre pour un effet élégant */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Titre de la stratégie */
+.BossImageOverlay h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.BossImageOverlay p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Strategy Section */
+.StrategySection {
+  background: radial-gradient(circle, rgba(20, 20, 20, 0.8), #121212);
+  padding: 40px 0;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.StrategyContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.StrategyContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.7);
+}
+
 .StrategyTitle {
   font-size: 2rem;
   font-weight: bold;
@@ -125,35 +178,101 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   text-align: center;
+  position: relative;
+  padding-bottom: 10px;
 }
 
-/* Section des guides */
+.StrategyTitle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(90deg, #ff7300, #ffc057);
+}
+
 .GuideSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
+  transition: transform 0.3s ease;
 }
 
-/* Vidéo */
+.GuideSection:hover {
+  transform: scale(1.02);
+}
+
 .GuideVideo {
-  width: 45%; /* Prend 45% de la largeur */
+  width: 45%;
+  aspect-ratio: 16 / 9;
   border: 2px solid #ff7300;
   border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Texte */
+.GuideVideo iframe {
+  width: 100%;
+  height: 100%;
+}
+
 .GuideText {
   width: 45%;
   text-align: left;
   padding: 10px;
-  background: rgba(0, 0, 0, 0.7); /* Fond plus foncé pour le contraste */
+  background: rgba(0, 0, 0, 0.7);
   color: #fff;
   border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-body, .App {
-  margin: 0;
-  padding: 0;
-  background-color: #0a0a0a; /* Assure un fond uniforme */
+.GuideText h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.GuideText p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.GuideText h3:hover {
+  color: #ffc057;
+}
+
+/* Button styles */
+button {
+  background: linear-gradient(90deg, #ff7300, #ffc057);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #ffc057, #ff7300);
+  transform: scale(1.05);
+}
+
+/* Floating animation */
+.StrategyContainer {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
