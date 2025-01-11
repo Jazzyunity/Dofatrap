@@ -29,7 +29,6 @@ function App() {
       {/* Main Content */}
       <main className="MainContent">
         <h1 className="DungeonTitle">Donjon de Bouftou</h1>
-
         {/* Section légère avec une couleur de fond différente */}
         <section className="StrategySection">
           <div className="StrategyContainer">
